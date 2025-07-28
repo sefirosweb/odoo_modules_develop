@@ -1,6 +1,12 @@
 Explicacion como usar el proyecto:
 https://github.com/Tecnativa/doodba-copier-template/blob/main/docs/daily-usage.md
 
+Iniciar development:
+
+```bash
+invoke develop img-build git-aggregate resetdb start
+```
+
 [![Doodba deployment](https://img.shields.io/badge/deployment-doodba-informational)](https://github.com/Tecnativa/doodba)
 [![Last template update](https://img.shields.io/badge/last%20template%20update-v8.3.8-informational)](https://github.com/Tecnativa/doodba-copier-template/tree/v8.3.8)
 [![Odoo](https://img.shields.io/badge/odoo-v18.0-a3478a)](https://github.com/odoo/odoo/tree/18.0)
