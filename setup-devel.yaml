@@ -27,12 +27,14 @@ services:
       - public
     volumes:
       - ./odoo/custom/src:/opt/odoo/custom/src:rw,z
+      - ${SSH_AUTH_SOCK}:/ssh-agent
     environment:
       DEPTH_DEFAULT: 100
       # XXX Export these variables before running setup to own the files
       UID: "${DOODBA_GITAGGREGATE_UID:-1000}"
       GID: "${DOODBA_GITAGGREGATE_GID:-1000}"
       UMASK: "$DOODBA_UMASK"
+      SSH_AUTH_SOCK: /ssh-agent
     user: root
     entrypoint: autoaggregate
 

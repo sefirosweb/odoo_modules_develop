@@ -1,0 +1,4 @@
+private_odoo_modules:
+  - fast_search
+web:
+  - web_responsive

@@ -1,9 +1,6 @@
 # See https://github.com/Tecnativa/doodba#optodoocustomsrcreposyaml
 ./odoo:
   defaults:
-    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
-    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
-    # for a sane value of 100 commits)
     depth: $DEPTH_DEFAULT
   remotes:
     ocb: https://github.com/OCA/OCB.git
@@ -12,5 +9,18 @@
   target: ocb $ODOO_VERSION
   merges:
     - ocb $ODOO_VERSION
-    # Example of a merge of the PR with the number <PR>
-    # - oca refs/pull/<PR>/head
+
+# Private repo
+./private_odoo_modules:
+  defaults:
+    depth: 1
+  remotes:
+    private: git@github.com:sefirosweb/private_odoo_modules.git
+  target: private $ODOO_VERSION
+  merges:
+    - private $ODOO_VERSION
+  repos:
+    - name: sefirosweb_private_odoo_modules
+      src: private
+      target: sefirosweb
+      shallow: true
